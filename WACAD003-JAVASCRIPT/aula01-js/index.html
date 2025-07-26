@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Gerador de História Aleatória</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 2rem;
+            max-width: 600px;
+            margin: auto;
+            background-color: #f2f2f2;
+        }
+
+        .story {
+            margin-top: 2rem;
+            padding: 1rem;
+            background: white;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        label {
+            display: block;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Gerador de História Aleatória</h1>
+
+    <label for="customname">Inserir nome personalizado:</label>
+    <input type="text" id="customname" placeholder="Ex: Maria">
+
+    <label>Unidade de medida:</label>
+    <input type="radio" name="unit" value="us" checked> Padrão EUA
+    <input type="radio" name="unit" value="uk"> Padrão Reino Unido
+
+    <br><br>
+    <button class="randomize">Gerar história aleatória</button>
+
+    <p class="story"></p>
+
+    <!-- Importando JavaScript externo -->
+    <script src="main.js"></script>
+
+</body>
+
+</html>

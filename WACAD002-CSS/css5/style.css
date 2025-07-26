@@ -1,0 +1,101 @@
+/* ========== RESET & BASE ========== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    font-family: system-ui, sans-serif;
+    background: #f4f4f4;
+    /* apenas contraste */
+}
+
+/* ========== GRID 2 × 3 (100 % DA TELA) ========== */
+.grid {
+    display: grid;
+    width: 100vw;
+    /* cobre toda a largura do navegador */
+    height: 100vh;
+    /* cobre toda a altura do navegador  */
+    grid-template-columns: repeat(2, 1fr);
+    /* 2 colunas iguais          */
+    grid-template-rows: repeat(3, 1fr);
+    /* 3 linhas iguais           */
+    gap: 2vmin;
+    /* espaço proporcional    */
+    padding: 2vmin;
+    /* margem interna         */
+}
+
+/* ========== BLOCO GENÉRICO ========== */
+.bloco {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    color: #fff;
+    border-radius: 8px;
+    font-size: clamp(.9rem, 2vw, 1.2rem);
+    overflow: visible;
+    /* garante que o Roxo apareça fora da célula */
+}
+
+/* ========== POSICIONAMENTO & CORES ========== */
+.vermelho {
+    grid-row: 1;
+    grid-column: 1;
+    background: #e53935;
+}
+
+.azul {
+    grid-row: 1;
+    grid-column: 2;
+    background: #1e88e5;
+}
+
+.verde {
+    grid-row: 2;
+    grid-column: 1;
+    background: #43a047;
+}
+
+.roxo {
+    grid-row: 2;
+    grid-column: 2;
+    background: #8e24aa;
+}
+
+.amarelo {
+    grid-row: 3;
+    grid-column: 1 / 3;
+    background: #ffd54f;
+    color: #000;
+}
+
+/* ========== DIFERENÇAS DE TAMANHO – LINHA 2 ========== */
+/* Verde menor: 50 % do tamanho da célula */
+.verde {
+    width: 50%;
+    height: 100%;
+    justify-self: start;
+
+}
+
+/* Roxo maior: 150 % da largura da célula, ancorado à direita
+   → invade 50 % da coluna 1                                     */
+.roxo {
+    width: 150%;
+    /* 1,5 × largura da célula            */
+    height: 100%;
+    /* altura total da célula             */
+    justify-self: end;
+    /* borda direita alinha-se à grade    */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .25);
+    /* realce opcional        */
+}

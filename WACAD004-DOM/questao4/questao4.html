@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Questão 04</title>
+    <style>
+        h1 {
+            width: 350px;
+            padding: 20px;
+            background-color: lightblue;
+        }
+
+        .lista {
+            width: 350px;
+            padding: 20px;
+            color: white;
+            background-color: lightcoral;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Questao 03</h1>
+
+    <h3 id="lista-titulo">Meus itens:</h3>
+
+    <ul id="lista-itens">
+        <li id="one" class="hot">item a</li>
+        <li id="two" class="hot">item b</li>
+        <li id="three" class="hot">item c</li>
+        <li id="four">item d</li>
+    </ul>
+
+    <script>
+        // a) Altere o background-color do <h1> para blue
+        const titulo = document.querySelector('h1');
+        titulo.style.backgroundColor = 'blue';
+
+        // b) Adicione a classe CSS 'lista' ao título <h3>
+        const subtitulo = document.getElementById('lista-titulo');
+        subtitulo.classList.add('lista');
+
+        // c) Deixe em negrito os itens da lista com a classe 'hot'
+        const itensHot = document.querySelectorAll('.hot');
+        itensHot.forEach(item => {
+            item.style.fontWeight = 'bold';
+        });
+    </script>
+</body>
+
+</html>

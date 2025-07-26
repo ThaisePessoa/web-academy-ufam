@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Questão 3 - Adicionar novo item</title>
+</head>
+
+<body>
+    <h1>Lista</h1>
+
+    <div>
+        <p id="lista-titulo" name="lista">Meus itens:</p>
+    </div>
+
+    <ul id="lista-itens-1">
+        <li id="one" class="hot">item a</li>
+        <li id="two" class="hot">item b</li>
+        <li id="three" class="hot">item c</li>
+        <li id="four">item d</li>
+    </ul>
+
+    <script>
+        // Seleciona a lista <ul> pelo id
+        const lista = document.getElementById('lista-itens-1');
+
+        // Cria um novo elemento <li>
+        const novoItem = document.createElement('li');
+
+        // Define o texto do novo item
+        novoItem.textContent = "item e";
+
+        // (Opcional) Adiciona um id ao novo item
+        novoItem.id = "five";
+
+        // Adiciona o novo <li> no final da lista
+        lista.appendChild(novoItem);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Análise de Vendas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 30px;
+            background-color: #f9f9f9;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        pre {
+            background: #eee;
+            padding: 15px;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Análise de Vendas - Loja Virtual</h1>
+    <pre id="resultado">Carregando...</pre>
+
+    <script>
+        function analisarPedidos(pedidos) {
+            const totalPedidos = pedidos.length;
+
+            let totalItensVendidos = 0;
+            let faturamentoTotal = 0;
+            const contagemPorProduto = {};
+
+            for (const pedido of pedidos) {
+                for (const item of pedido.itens) {
+                    totalItensVendidos += item.quantidade;
+                    faturamentoTotal += item.preco * item.quantidade;
+
+                    contagemPorProduto[item.produto] =
+                        (contagemPorProduto[item.produto] || 0) + item.quantidade;
+                }
+            }
+
+            const produtoMaisVendido = Object.entries(contagemPorProduto)
+                .sort(([, qtdA], [, qtdB]) => qtdB - qtdA)[0]?.[0] || null;
+
+            const ticketMedio = Number((faturamentoTotal / totalPedidos).toFixed(2));
+
+            return {
+                totalPedidos,
+                totalItensVendidos,
+                faturamentoTotal,
+                ticketMedio,
+                produtoMaisVendido
+            };
+        }
+
+        const pedidos = [
+            {
+                id: "A001",
+                cliente: "João",
+                itens: [
+                    { produto: "Camisa", preco: 50, quantidade: 2 },
+                    { produto: "Boné", preco: 30, quantidade: 1 }
+                ]
+            },
+            {
+                id: "A002",
+                cliente: "Maria",
+                itens: [
+                    { produto: "Camisa", preco: 50, quantidade: 1 },
+                    { produto: "Calça", preco: 120, quantidade: 1 }
+                ]
+            }
+        ];
+
+        const resultado = analisarPedidos(pedidos);
+        console.log(resultado);
+        document.getElementById("resultado").textContent = JSON.stringify(resultado, null, 2);
+    </script>
+</body>
+
+</html>

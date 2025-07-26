@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Questão 01</title>
+</head>
+
+<body>
+    <h1>Lista</h1>
+
+    <div>
+        <p id="lista-titulo" name="lista">Meus itens:</p>
+    </div>
+
+    <ul id="lista-itens-1">
+        <li id="one" class="hot">item a</li>
+        <li id="two" class="hot">item b</li>
+        <li id="three" class="hot">item c</li>
+        <li id="four">item d</li>
+    </ul>
+
+    <script>
+        const lista1 = document.getElementById('lista-itens-1');
+
+        // i) Imprimir o primeiro e o último filho da lista 1
+        console.log("Primeiro filho da lista 1:");
+        console.log(lista1.firstElementChild);
+
+        console.log("Último filho da lista 1:");
+        console.log(lista1.lastElementChild);
+
+        // Imprimir o elemento pai da lista 1
+        console.log("Pai da lista 1:");
+        console.log(lista1.parentElement);
+
+        // Imprimir todos os filhos da lista 1
+        console.log("Todos os filhos da lista 1:");
+        const filhos = lista1.children;
+        for (let i = 0; i < filhos.length; i++) {
+            console.log(filhos[i]);
+        }
+
+        // Irmãos do item com id="two"
+        const itemTwo = document.getElementById('two');
+        console.log("Irmão anterior do item 'two':");
+        console.log(itemTwo.previousElementSibling);
+
+        console.log("Irmão seguinte do item 'two':");
+        console.log(itemTwo.nextElementSibling);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,135 @@
+/* ---------- CORES & RESET BÁSICO ---------- */
+:root {
+    --bg-dark: #1f242b;
+    --text-light: #f1f7ff;
+    --text-dim: #d4dde8;
+    --accent: #0087ac;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: system-ui, Arial, sans-serif;
+    background: #cfdfe8;
+    line-height: 1.4;
+}
+
+/* ---------- COMPONENTE NAV GERAL ---------- */
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    padding: 0 24px;
+    height: 72px;
+    background: var(--bg-dark);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, .35);
+    margin: 24px auto;
+    max-width: 95%;
+    /* só para dar uma folga nas laterais */
+    border-radius: 2px;
+}
+
+/* logo -------------------------------------------------------------- */
+.logo {
+    font-size: 1.25rem;
+    color: var(--text-light);
+    letter-spacing: .5px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+/* lista de links ---------------------------------------------------- */
+.links {
+    list-style: none;
+    display: flex;
+    gap: 48px;
+    /* distância entre itens */
+    flex-wrap: wrap;
+    /* quebra em telas menores */
+}
+
+.links a {
+    color: var(--text-dim);
+    text-decoration: none;
+    font-size: .95rem;
+    transition: color .25s;
+}
+
+.links a:hover {
+    color: var(--text-light);
+}
+
+/* botão "Contact" --------------------------------------------------- */
+.cta {
+    background: var(--accent);
+    color: var(--text-light);
+    padding: 8px 28px;
+    border-radius: 9999px;
+    /* pílula */
+    text-decoration: none;
+    font-size: .95rem;
+    font-weight: 500;
+    transition: filter .25s;
+    white-space: nowrap;
+    /* impede quebra de linha */
+}
+
+.cta:hover {
+    filter: brightness(1.1);
+}
+
+/* ---------- LAYOUT ESPECÍFICO DE CADA BARRA ---------- */
+
+/* NAV 1 – logo | links (flex:1) | botão */
+.nav-1 .links {
+    flex: 1;
+    justify-content: center;
+}
+
+.nav-1 .cta {
+    margin-left: auto;
+}
+
+/* garante que fique à direita */
+
+/* NAV 2 – links (flex:1) | logo */
+.nav-2 {
+    justify-content: space-between;
+}
+
+/* empurra logo p/ a direita */
+.nav-2 .links {
+    flex: 1;
+}
+
+/* ocupa espaço restante */
+
+/* NAV 3 – logo | links + botão à direita */
+.nav-3 {
+    justify-content: space-between;
+}
+
+.nav-3 .links {
+    gap: 40px;
+}
+
+/* ligeiro ajuste visual */
+
+/* ---------- RESPONSIVIDADE BÁSICA ---------- */
+@media (max-width: 600px) {
+    .nav {
+        flex-direction: column;
+        height: auto;
+        padding: 16px;
+        gap: 16px;
+    }
+
+    .links {
+        justify-content: center;
+        gap: 24px;
+    }
+}

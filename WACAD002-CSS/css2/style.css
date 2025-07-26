@@ -1,0 +1,27 @@
+body {
+    margin: 0;
+    font-family: Georgia, serif;
+    background-image: url("nebulosa.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: white;
+}
+
+.caixa {
+    width: 300px;
+    margin: 40px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 5px solid #d78b49;
+    border-radius: 40px;
+}
+
+h1 {
+    font-size: 1.6em;
+    margin-top: 0;
+}
+
+p {
+    line-height: 1.6;
+}

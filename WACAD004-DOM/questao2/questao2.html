@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Questão 2 - DOM</title>
+</head>
+
+<body>
+    <h1>Lista</h1>
+
+    <div>
+        <p id="lista-titulo" name="lista">Meus itens:</p>
+    </div>
+
+    <ul id="lista-itens-1">
+        <li id="one" class="hot">item a</li>
+        <li id="two" class="hot">item b</li>
+        <li id="three" class="hot">item c</li>
+        <li id="four">item d</li>
+    </ul>
+
+    <script>
+        // alterar texto do parágrafo com id "lista-titulo" usando nodeValue
+        const pTitulo = document.getElementById('lista-titulo');
+        pTitulo.firstChild.nodeValue = "Nova Lista de Itens";
+
+        // alterar texto do item com id "two" usando textContent
+        const liDois = document.getElementById('two');
+        liDois.textContent = "Item B Atualizado";
+    </script>
+</body>
+
+</html>

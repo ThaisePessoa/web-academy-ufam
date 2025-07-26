@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Questão 05</title>
+    <style>
+        .hot {
+            color: red;
+        }
+
+        .cold {
+            color: blue;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Listas</h1>
+
+    <p id="lista-titulo" name="lista">Minhas listas:</p>
+
+    <ul class="lista-itens-1">
+        <li id="one" class="hot">item a</li>
+        <li id="two" class="hot">item b</li>
+        <li id="three" class="hot">item c</li>
+        <li id="four">item d</li>
+    </ul>
+
+    <ul class="lista-itens-2">
+        <li id="one" class="hot">item a</li>
+        <li id="two" class="hot">item b</li>
+        <li id="three" class="hot">item c</li>
+        <li id="four">item d</li>
+    </ul>
+
+    <ul class="lista-itens-3">
+        <li id="one" class="hot">item a</li>
+        <li id="two" class="hot">item b</li>
+        <li id="three" class="hot">item c</li>
+        <li id="four">item d</li>
+    </ul>
+
+    <ul class="lista-itens-4">
+        <li id="one" class="hot">item a</li>
+        <li id="two" class="hot">item b</li>
+        <li id="three" class="hot">item c</li>
+        <li id="four">item d</li>
+    </ul>
+
+    <script>
+        // Selecionar todos os <li> dentro da lista-itens-2
+        const itensLista2 = document.querySelectorAll('.lista-itens-2 li');
+
+        // i) Mudar a cor do texto para purple
+        itensLista2.forEach(item => {
+            item.style.color = 'purple';
+        });
+
+        // ii) Substituir a classe 'hot' por 'cold'
+        itensLista2.forEach(item => {
+            if (item.classList.contains('hot')) {
+                item.classList.remove('hot');
+                item.classList.add('cold');
+            }
+        });
+    </script>
+</body>
+
+</html>

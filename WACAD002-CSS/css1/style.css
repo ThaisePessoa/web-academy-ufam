@@ -1,0 +1,10 @@
+.destaque {
+    background-color: #c0c0c0;
+    padding: 40px;
+    border: 15px solid black;
+    border-radius: 60px;
+    font-size: 1.5em;
+    width: 60%;
+    margin: 60px auto;
+    line-height: 1.6;
+}

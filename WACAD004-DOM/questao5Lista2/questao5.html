@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Questão 5 - To-do List com Eventos</title>
+</head>
+
+<body>
+    <h1>To-do</h1>
+
+    <div>
+        <p id="lista-titulo" name="lista">Lista de atividades:</p>
+    </div>
+
+    <div>
+        <input id="entrada-item" placeholder="Digite aqui o item" />
+        <button id="botao-adicionar">Adicionar</button>
+    </div>
+
+    <ul id="lista-itens">
+        <li>item a</li>
+    </ul>
+
+    <div>
+        <button id="botao-remover">Remover último item</button>
+    </div>
+
+    <script>
+        const input = document.getElementById("entrada-item");
+        const btnAdicionar = document.getElementById("botao-adicionar");
+        const btnRemover = document.getElementById("botao-remover");
+        const lista = document.getElementById("lista-itens");
+
+        // Adicionar novo item
+        btnAdicionar.addEventListener("click", () => {
+            const texto = input.value.trim();
+
+            if (texto !== "") {
+                const novoItem = document.createElement("li");
+                novoItem.textContent = texto;
+                lista.appendChild(novoItem);
+                input.value = ""; // limpa o campo
+                input.focus();    // volta o foco pro campo
+            } else {
+                alert("Por favor, digite um item antes de adicionar.");
+            }
+        });
+
+        // Remover último item
+        btnRemover.addEventListener("click", () => {
+            if (lista.children.length > 0) {
+                lista.removeChild(lista.lastElementChild);
+            } else {
+                alert("Nenhum item para remover.");
+            }
+        });
+    </script>
+</body>
+
+</html>
